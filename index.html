@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>TIC CONFIGURATION TOOL</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+   <!--<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'> -->
+  
+<link rel="stylesheet" href="./style.css">
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<!--PEN HEADER-->
+<header class="header">
+  <h1 class="header__title"><i class="fas fa-tools"></i> TIC CONFIGURATION TOOL</h1>
+</header>
+<!--PEN CONTENT     -->
+<div class="content">
+  <!--content inner-->
+  <div class="content__inner">
+    
+    <div class="container overflow-hidden">
+      <!--multisteps-form-->
+      <div class="multisteps-form">
+        <!--progress bar-->
+        <div class="row">
+          <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
+            <div class="multisteps-form__progress">
+              <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">MASTER MACHINES</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Address">WORKER MACHINES</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Order Info">GLUSTERFS MACHINES</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Comments">HYPERLEDGER SERVICES</button>
+            </div>
+          </div>
+        </div>
+        <!--form panels-->
+        <div class="row">
+          <div class="col-12 col-lg-8 m-auto">
+            <form class="multisteps-form__form">
+              <!--single form panel-->
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
+                <h3 class="multisteps-form__title">MASTER MACHINES</h3>
+                <div class="multisteps-form__content">
+                  <div class="form-row mt-4">
+                    
+
+                    <div class="container">
+                      
+                      <div class="row">
+                        <div class="button-row d-flex mt-4 col-12">
+                          <h5 class="card-title">MASTER MACHINES</h5>
+                          <button id="add_master_button" class="btn btn-primary ml-auto " type="button" title="Peers">Add Masters</button>
+                        </div>
+                      </div>
+                      <br>
+                            <table id="master_Table" class=" table master-list">
+                                  <thead class="thead-dark">
+                                      <tr>
+                                          <td class="col-sm-2">MASTER</td>
+                                          <td class="col-sm-2">HOST_NAME</td>
+                                          <td class="col-sm-2">IP_ADDRESS</td>
+                                          <td class="col-sm-1">DELETE</td>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      
+                                  </tbody>
+                                  <tfoot>
+                                      <tr>
+                                          <td colspan="4" style="text-align: left;">
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                      </tr>
+                                  </tfoot>
+                            </table>
+                      </div>
+
+
+
+
+                  </div>
+
+                  
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                  </div>
+                </div>
+              </div>
+              <!--single form panel-->
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                <h3 class="multisteps-form__title">WORKER MACHINES</h3>
+                <div class="multisteps-form__content">
+                  <div class="form-row mt-4">
+                    
+
+
+                    <div class="container">
+                      
+                      <div class="row">
+                        <div class="button-row d-flex mt-4 col-12">
+                          <h5 class="card-title">WORKER MACHINES</h5>
+                          <button id="add_worker_button" class="btn btn-primary ml-auto " type="button" title="Peers">Add Workers</button>
+                        </div>
+                      </div>
+                      <br>
+                            <table id="worker_table" class=" table worker-list">
+                                  <thead class="thead-dark">
+                                      <tr>
+                                          <td class="col-sm-2">WORKER</td>
+                                          <td class="col-sm-2">HOST_NAME</td>
+                                          <td class="col-sm-2">IP_ADDRESS</td>
+                                          <td class="col-sm-1">DELETE</td>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      
+                                  </tbody>
+                                  <tfoot>
+                                      <tr>
+                                          <td colspan="4" style="text-align: left;">
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                      </tr>
+                                  </tfoot>
+                            </table>
+                      </div>
+
+
+
+
+
+
+
+
+                  </div>
+
+
+                 
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                  </div>
+                </div>
+              </div>
+              <!--single form panel-->
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                <h3 class="multisteps-form__title">GLUSTERFS MACHINES</h3>
+                <div class="multisteps-form__content">
+                  <div class="row">
+                    
+
+
+                    <div class="container">
+                      
+                      <div class="row">
+                        <div class="button-row d-flex mt-4 col-12">
+                          <h5 class="card-title">GLUSTERFS MACHINES</h5>
+                          <button id="add_gluster_button" class="btn btn-primary ml-auto " type="button" title="Peers">Add GlusterFS</button>
+                        </div>
+                      </div>
+                      <br>
+                            <table id="gluster_table" class=" table gluster-list">
+                                  <thead class="thead-dark">
+                                      <tr>
+                                          <td class="col-sm-2">GLUSTER</td>
+                                          <td class="col-sm-2">HOST_NAME</td>
+                                          <td class="col-sm-2">IP_ADDRESS</td>
+                                          <td class="col-sm-1">DELETE</td>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      
+                                  </tbody>
+                                  <tfoot>
+                                      <tr>
+                                          <td colspan="4" style="text-align: left;">
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                      </tr>
+                                  </tfoot>
+                            </table>
+                      </div>
+
+
+
+
+
+
+                  </div>
+                  <div class="row">
+                    <div class="button-row d-flex mt-4 col-12">
+                      <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--single form panel-->
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                <h3 class="multisteps-form__title">HYPERLEDGER FABRIC SERVICES</h3>
+                <div class="multisteps-form__content">
+                  <div class="form-row mt-4">
+
+
+
+
+
+                    <div class="container">
+                      
+                      <div class="row">
+                        <div class="button-row d-flex mt-4 col-12">
+                          <h5 class="card-title">CA,ORDERER AND CLI SERVICES</h5>
+                        </div>
+                      </div>
+                      <br>
+                            <table id="service_table" class=" table service-list">
+                                  <thead class="thead-dark">
+                                      <tr>
+                                          <td class="col-sm-1">SERVICE NAME</td>
+                                          <td class="col-sm-1">REPLICAS</td>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                         
+                                          <td class="col-sm-1">
+                                              <input type="text" name="orderer_replicas" value="Orgca" class="form-control" />
+                                          </td>
+                                          <td class="col-sm-1">
+                                              <input type="number" value="1" name="replicas" class="form-control" />
+                                          </td>
+
+                                      </tr>
+                                      <tr>
+                                         
+                                        <td class="col-sm-1">
+                                            <input type="text" name="orderer_replicas" value="Tlsca" class="form-control" />
+                                        </td>
+                                        <td class="col-sm-1">
+                                            <input type="number" value="1" name="replicas" class="form-control" />
+                                        </td>
+
+                                        </tr>
+                                        <tr>
+                                            
+                                          <td class="col-sm-1">
+                                              <input type="text" name="orderer_replicas" value="Orderer" class="form-control" />
+                                          </td>
+                                          <td class="col-sm-1">
+                                              <input type="number" value="1" name="replicas" class="form-control" />
+                                          </td>
+
+                                      </tr>
+                                      <tr>
+                                            
+                                        <td class="col-sm-1">
+                                            <input type="text" name="orderer_replicas" value="Cli" class="form-control" />
+                                        </td>
+                                        <td class="col-sm-1">
+                                            <input type="number" value="1" name="replicas" class="form-control" />
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                            
+                                      
+
+                                  </tr>
+                                  </tbody>
+                                  <tfoot>
+                                      <tr>
+                                          <td colspan="2" style="text-align: left;">
+                    
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                      </tr>
+                                  </tfoot>
+                            </table>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="container">
+                      
+                      <div class="row">
+                        <div class="button-row d-flex mt-4 col-12">
+                          <h5 class="card-title">PEER SERVICES</h5>
+                          <button id="add_peer_button" class="btn btn-primary ml-auto " type="button" title="Peers">Add Peers</button>
+                        </div>
+                      </div>
+                      <br>
+                            <table id="myTable" class=" table peer-list">
+                                  <thead class="thead-dark">
+                                      <tr>
+                                          <td class="col-sm-2">Peer</td>
+                                          <td class="col-sm-2">REPLICAS</td>
+                                          <td class="col-sm-1">ANCHOR</td>
+                                          <td class="col-sm-1">COMMITTER</td>
+                                          <td class="col-sm-1">ENDORSER</td>
+                                          <td class="col-sm-1">DELETE</td>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <!--<tr>
+                                          <td class="col-sm-2">
+                                              <label  class="form-control">Peer1</label>
+                                          </td>
+                                          <td class="col-sm-2">
+                                              <input type="text" name="replicas" class="form-control" />
+                                          </td>
+                                          <td class="col-sm-1">
+                                              <input type="checkbox" name="checkboxes"  value="anchor" class="form-control" />
+                                          </td>
+                                          <td class="col-sm-1">
+                                            <input type="checkbox" name="checkboxes"  value="endorser" class="form-control" />
+                                          </td>
+                                          <td class="col-sm-1">
+                                            <input type="checkbox" name="checkboxes"  value="committer" class="form-control" />
+                                          </td>
+                                          <td class="col-sm-2"><a class="deleteRow"></a>
+                              
+                                          </td>
+                                      </tr>-->
+                                  </tbody>
+                                  <tfoot>
+                                      <tr>
+                                          <td colspan="6" style="text-align: left;">
+                                              <!-- <input type="button" class="btn btn-lg btn-block " id="addrow" value="Add Row" /> -->
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                      </tr>
+                                  </tfoot>
+                            </table>
+                      </div>
+
+
+
+
+
+                  </div>
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                    <button onclick="Swal.fire('Success')" class="btn btn-success ml-auto" type="button" title="Send">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'></script>-->
+  <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'></script>-->
+<script  src="./script.js"></script>
+<script>
+  $(document).ready(function () {
+    var peer_counter = 0;
+    var master_counter = 0;
+    var worker_counter = 0;
+    var gluster_counter = 0;
+
+    $("#add_peer_button").on("click", function () {
+      peer_counter++;
+        var newRow = $("<tr>");
+        var cols = "";
+        
+        // cols += '<td class="col-sm-2"> <label  class="form-control">Peer ' + peer_counter + '</label>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="name" value="peer ' + peer_counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="number" value="1" class="form-control" name="replicas' + peer_counter + '"/></td>';
+        cols += '<td class="col-sm-1"><input type="checkbox" class="form-control" value="anchor' + peer_counter + '"/></td>';
+        cols += '<td class="col-sm-1"><input type="checkbox" class="form-control" value="committer' + peer_counter + '"/></td>';
+        cols += '<td class="col-sm-1"><input type="checkbox" class="form-control" value="endorser' + peer_counter + '"/></td>';
+
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+        newRow.append(cols);
+        $("table.peer-list").append(newRow);
+        
+    });
+
+    $("#add_master_button").on("click", function () {
+      master_counter++;
+        var newRow = $("<tr>");
+        var cols = "";
+        
+        // cols += '<td class="col-sm-2"> <label  class="form-control">Peer ' + master_counter + '</label>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="master' + master_counter + '_id" value="master ' + master_counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="master' + master_counter + '_hostname" value="master ' + master_counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="master' + master_counter + '_ip"/></td>';
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+        newRow.append(cols);
+        $("table.master-list").append(newRow);
+        
+    });
+
+
+    $("#add_worker_button").on("click", function () {
+      worker_counter++;
+        var newRow = $("<tr>");
+        var cols = "";
+        
+        // cols += '<td class="col-sm-2"> <label  class="form-control">Peer ' + worker_counter + '</label>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="worker' + worker_counter + '_id" value="worker ' + worker_counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="worker' + worker_counter + '_hostname" value="worker ' + worker_counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="worker' + worker_counter + '_ip"/></td>';
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+        newRow.append(cols);
+        $("table.worker-list").append(newRow);
+        
+    });
+
+
+
+    $("#add_gluster_button").on("click", function () {
+      gluster_counter++;
+        var newRow = $("<tr>");
+        var cols = "";
+        
+        // cols += '<td class="col-sm-2"> <label  class="form-control">Peer ' + gluster_counter + '</label>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="gluster' + gluster_counter + '_id" value="gluster ' + gluster_counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="gluster' + gluster_counter + '_hostname" value="gluster ' + gluster_counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control" name="gluster' + gluster_counter + '_ip"/></td>';
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+        newRow.append(cols);
+        $("table.gluster-list").append(newRow);
+        
+    });
+
+
+
+    $("table.peer-list").on("click", ".ibtnDel", function (event) {
+      peer_counter -= 1
+        $(this).closest("tr").remove();       
+    });
+    
+    $("table.master-list").on("click", ".ibtnDel", function (event) {
+      master_counter -= 1
+        $(this).closest("tr").remove();       
+    });
+
+    $("table.worker-list").on("click", ".ibtnDel", function (event) {
+      worker_counter -= 1
+        $(this).closest("tr").remove();       
+    });
+
+    $("table.gluster-list").on("click", ".ibtnDel", function (event) {
+      gluster_counter -= 1
+        $(this).closest("tr").remove();       
+    });
+
+});
+
+
+
+</script>
+</body>
+</html>
